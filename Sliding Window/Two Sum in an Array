@@ -1,0 +1,36 @@
+import java.io.*;
+import java.util.*;
+
+class Accio{
+    public int[] twoSum(int[] nums, int target) {
+        //Write code here
+		 int n = nums.length;
+        
+         for(int i=0;i<n;i++){
+             for(int j=i+1;j<n;j++){
+                 if(nums[i] + nums[j]==target){
+                     return new int[]{i,j} ;
+                 }
+             }
+         }
+         return new int[]{};
+    }
+}
+
+public class Main {
+
+    public static void main(String args[]) {
+        Scanner input = new Scanner(System.in);
+        int n = input.nextInt();
+        int target = input.nextInt();
+        int[] nums = new int[n];
+        for(int i = 0; i < n; i++){
+            nums[i] = input.nextInt();
+        }
+        Accio obj = new Accio();
+        int[] arr = obj.twoSum(nums,target);
+        System.out.print(arr[0]);
+        System.out.print(' ');
+        System.out.print(arr[1]);
+    }
+}
